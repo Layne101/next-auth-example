@@ -1,9 +1,10 @@
 import { Provider } from 'next-auth/client'
 import './styles.css'
+import { appWithTranslation } from 'next-i18next'
 
 // Use the <Provider> to improve performance and allow components that call
 // `useSession()` anywhere in your application to access the `session` object.
-export default function App ({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => {
   return (
     <Provider
       // Provider options are not required but can be useful in situations where
@@ -28,3 +29,5 @@ export default function App ({ Component, pageProps }) {
     </Provider>
   )
 }
+
+export default appWithTranslation(MyApp)
